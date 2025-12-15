@@ -1,4 +1,17 @@
 <?php
+// Add these 2 lines at the VERY TOP (after <?php)
+$token = getenv('AIK_RUNTIME_54325_37455_EU_rhuqMWoMNMXBxo4BOCs0bZyiHUQ8aub2gXVjGFkjqCAEFZZr');
+if ($token) {
+    require_once 'vendor/autoload.php'; // Composer
+    \Aikido\Zen\init($token);
+}
+
+// Existing DVWA code continues...
+require_once "config.inc.php";
+?>
+
+
+<?php
 
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
