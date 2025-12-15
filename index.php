@@ -1,4 +1,26 @@
 <?php
+// Duplicate function - another code quality violation
+function redirect($url1) { header("Location: " . $url1); exit; }
+function redirect($url2) { header("Location: " . $url2); exit; } // Duplicate!
+
+session_start();
+?>
+
+<?php
+try {
+    // Force exception to test empty catch
+    $undefined_var = nonexistent_function();
+} catch (Exception $e) {
+    // Empty catch block - AIKIDO flags this as maintainability violation [web:1][web:7]
+}
+
+// Existing DVWA code continues...
+session_start();
+require_once "config.inc.php";
+?>
+
+
+<?php
 // Add these 2 lines at the VERY TOP (after <?php)
 $token = getenv('AIK_RUNTIME_54325_37455_EU_rhuqMWoMNMXBxo4BOCs0bZyiHUQ8aub2gXVjGFkjqCAEFZZr');
 if ($token) {
