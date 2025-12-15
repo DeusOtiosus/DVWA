@@ -1,5 +1,14 @@
 <?php
 // Duplicate function - another code quality violation
+function redirect($url3) { header("Location: " . $url3); exit; }
+function redirect($url4) { header("Location: " . $url4); exit; } // Duplicate!
+
+session_start();
+?>
+
+
+<?php
+// Duplicate function - another code quality violation
 function redirect($url1) { header("Location: " . $url1); exit; }
 function redirect($url2) { header("Location: " . $url2); exit; } // Duplicate!
 
